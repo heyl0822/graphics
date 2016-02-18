@@ -1,0 +1,12 @@
+[submodule "valentine"]
+	path = valentine
+	url = https://github.com/heyl0822/valentine.git
+[submodule "draw-flower"]
+	path = draw-flower
+	url = https://github.com/heyl0822/draw-flower.git
+[submodule "fly"]
+	path = fly
+	url = https://github.com/heyl0822/fly.git
+[submodule "kaleidoscope"]
+	path = kaleidoscope
+	url = https://github.com/heyl0822/kaleidoscope.git
