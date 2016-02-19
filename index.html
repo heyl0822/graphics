@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <title>Graphics Demos</title>
+  </head>
+  
+  <body>
+    <div class="banner"></div>
+    <h1><a href="http://yanlinghe.com" style="font-family: 'Courier New', Courier, monospace">Woolalala</a></h1>
+  </body>
+  <script>
+    $(document).ready(function () {
+      $.getJSON("json/project.json", function (data) {
+        var projectItems = [];
+        $.each( data.items, function( i, item ) {
+          var itemStr = "<li class=\"project-item\"><div class=\"project-container\"><a style=\"display:block\" href=\"" + item.link + "\"><!-- project detail content --><div class=\"project-detail-container\" style=\"background-image: url(" + item.imageUrl + ")\"><!-- overlay detail content --><div class=\"project-detail-overley\"><div class=\"project-detail-content\"><p class=\"project-detail-title\">" + item.detailTitle + "</p><p class=\"project-detail-title\">Detail</p><p class=\"project-detail-text\">" + item.detailText + "</p><p class=\"project-detail-title\">Technology</p><p class=\"project-detail-text\">" + item.technologyText + "</p><p class=\"project-detail-title\">";
+          
+          $.each( item.tags, function( i, tag ) {
+            itemStr = itemStr.concat(" #" + tag );
+          });
+          
+          itemStr = itemStr.concat("</p></div></div></div></a><!-- dish info content --><p class=\"project-name\"><a href=\"" + item.link + "\">" + item.name + "</a></p><p class=\"project-article\"><a href=\"" + item.articleUrl + "\">Article</a></p><div class=\"svg-heart-container\"><svg version=\"1.1\" id=\"Layer_1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" x=\"0px\" y=\"0px\" viewBox=\"0 0 1000 1000\" style=\"enable-background:new 0 0 1000 1000;\" xml:space=\"preserve\"><path id=\"heart\" class=\"st0\" d=\"M251.5,500l218,222.5c14.9,14.9,39.3,14.9,54.2,0l224.8-222.6C780.9,468.2,801,424,801,375c0-96.5-78.2-174.6-174.6-174.6c-47.6,0-90.8,19.1-122.3,50l-0.1-0.1c-32.2-32.5-76.9-52.7-126.2-52.7c-98.1,0-177.6,79.5-177.6,177.6C200.2,423.8,219.8,467.9,251.5,500\"/></svg></div></div></li>");
+          
+          projectItems.push(itemStr);
+        });
+        
+        $( "<ul/>", {
+          "id": "project-list",
+          html: projectItems.join( " " )
+        }).appendTo( "body" );
+    
+      })
+      .fail(function (jqXHR, textStatus, errorThrown) {
+        console.log("jqXHR: " + jqXHR.status + "\ntextStatus: " + textStatus + "\nerrorThrown: " + errorThrown);
+      });
+    });
+  
+  </script>
+</html>
+

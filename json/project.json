@@ -1,0 +1,32 @@
+{"items":[
+  {
+    "link":"valentine/", 
+    "imageUrl":"img/project_image_1.jpeg", 
+    "detailTitle":"Happy Valentine's Day", 
+    "detailText":"3D Heart Beat with Music", 
+    "technologyText":"ThreeJS, WebGL, Web Audio", 
+    "tags":["graphics", "math", "musicvisualization"], 
+    "name":"Shape Your Heart", 
+    "articleUrl":"https://medium.com/parallel-press/shape-your-heart-9d9e123f990#.58vrcerxs"
+  },
+  {
+     "link":"draw-flower/", 
+    "imageUrl":"img/project_image_2.jpeg", 
+    "detailTitle":"Draw Flower", 
+    "detailText":"Drawing flowers based on their photos", 
+    "technologyText":"ThreeJS, WebGL", 
+    "tags":["graphics", "math", "flower"], 
+    "name":"Trace Flower", 
+    "articleUrl":""
+  },
+  {
+     "link":"fly/", 
+    "imageUrl":"img/project_image_3.jpeg", 
+    "detailTitle":"Interesting Movement", 
+    "detailText":"An interesting sphere movement. Mouse orbit control enabled.", 
+    "technologyText":"ThreeJS, WebGL", 
+    "tags":["graphics", "math", "random"], 
+    "name":"A Tiny Movement", 
+    "articleUrl":""
+  }
+]}
